@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.Locale;
+
+public class CharacterCount {
+    //Find the count of each char from the input string
+    public void characterCount(String input1) {
+        String input = input1.toUpperCase(Locale.ROOT);
+        HashMap<Character, Integer> map = new HashMap();
+        for (Character ch : input.toCharArray()) {
+            if (!map.containsKey(ch)) {
+                map.put(ch, 1);
+            } else {
+                map.put(ch, map.get(ch) + 1);
+            }
+        }
+        System.out.println(map);
+    }
+
+    public static void main(String[] args) {
+        String str = "SUNILNEGIjksdnfvkajsdAAsfnsdfnvaekvjadfnvjierndvnds";
+        StringCount obj = new StringCount();
+        obj.characterCount(str);
+    }
+}
