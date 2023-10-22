@@ -1,2 +1,2 @@
 # CodePractice
-# This Project contains coding problems and solution for SDET/SDE.
+# This Project contains coding problems with solution for SDET/SDE.
