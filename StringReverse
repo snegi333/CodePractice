@@ -1,0 +1,16 @@
+public class StringReverse {
+
+    public String revString(String input) {
+        String revInput = "";
+        for (Character ch : input.toCharArray()) {
+            revInput = ch + revInput;
+        }
+        return revInput;
+    }
+
+    public static void main(String[] args) {
+        String str = "SUNILNEGI";
+        StringReverse obj = new StringReverse();
+        System.out.println(obj.revString(str));
+    }
+}
