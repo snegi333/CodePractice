@@ -1,0 +1,37 @@
+import java.util.HashSet;
+
+public class SearchMissingNumber {
+    //Find missing value using it's index value
+    public static int findMissingValue(int[] arr) {
+        HashSet<Integer> set = new HashSet<>();
+        int missingNum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            set.add(arr[i]);
+        }
+        for (int i = 1; i <= set.size(); i++) {
+            if (!set.contains(i)) {
+                missingNum = i;
+            }
+        }
+        return missingNum;
+    }
+
+    //Find missing value using sum of n natural numbers
+    public static int findValueUsingSum(int[] arr) {
+        int lastValue = arr.length + 1, arrSum = 0;
+        int SumOfNatural = lastValue * (lastValue + 1) / 2;
+        for (int i : arr) {
+            arrSum = arrSum + i;
+        }
+        int out = SumOfNatural - arrSum;
+
+        return out;
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr = {6, 3, 5, 1, 2, 7, 4, 9};
+        int output = findValueUsingSum(arr);
+        System.out.println(output);
+    }
+}
