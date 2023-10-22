@@ -1,0 +1,40 @@
+import java.util.Stack;
+
+public class StingBalance {
+
+    public boolean functionStringBalance(String str){
+        if(str.isEmpty())
+            return true;
+        Stack<Character> st = new Stack<>();
+        for(Character ch : str.toCharArray()){
+            if(ch=='[' || ch=='{' || ch=='('){
+                st.push(ch);
+            }else if(ch == ']'){
+                if(st.peek() == '[')
+                    st.pop();
+            }else if(ch == '}'){
+                if(st.peek() == '{')
+                    st.pop();
+            }else if(ch == ')'){
+                if(st.peek() == '(')
+                    st.pop();
+            }else{
+                continue;
+            }
+        }
+
+        if(st.isEmpty())
+            return true;
+        else
+            return false;
+    }
+
+    public static void main(String[] args) {
+        String input = "[[[()1234]]{abc}]";
+        StingBalance obj = new StingBalance();
+        System.out.println(obj.functionStringBalance(input));
+
+    }
+}
+
+
