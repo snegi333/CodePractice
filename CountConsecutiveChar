@@ -1,20 +1,14 @@
-public class CountConsecutiveNum {
-
-    // String = "AARCCRRA" -> output = A2R1C2R2A1
+public class CountConsecutiveChar {
+    // String = "AAARCCCCCCCCRRA" -> output = A3R1C8R2A1
     public static void main(String[] args) {
-        String str = "AARCCRRA", output = "";
-        int i = 0;
-        while (i < str.length()) {
+        String str = "AAARCCCCCCCCRRA";
+        for (int i = 0; i < str.length(); i++) {
             int count = 1;
-            if (i == str.length() - 1) {
-                output = output + str.charAt(i) + count;
-                break;
-            } else if (str.charAt(i) == str.charAt(i + 1)) {
+            while (i + 1 < str.length() && (str.charAt(i) == str.charAt(i + 1))) {
                 count++;
+                i++;
             }
-            output = output + str.charAt(i) + count;
-            i = i + count;
+            System.out.print(str.charAt(i) + "" + count);
         }
-        System.out.println(output);
     }
 }
