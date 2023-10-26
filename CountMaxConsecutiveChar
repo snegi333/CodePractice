@@ -1,0 +1,15 @@
+public class CountMaxConsecutiveChar {
+    // String = "AARCCCCRRA" -> output = 4
+    public static void main(String[] args) {
+        String str = "ACBBAAA", out = "";
+        int max_count = 1, count = 1;
+        for (int i = 0; i < str.length(); i++) {
+            if ((i + 1 < str.length()) && (str.charAt(i) == str.charAt(i + 1)))
+                count++;
+            else
+                count = 1;
+            max_count = Math.max(max_count, count);
+        }
+        System.out.println(max_count);
+    }
+}
